@@ -5,11 +5,13 @@ from flask import Flask, request, jsonify
 import sqlite3
 import hashlib
 
+
 app = Flask(__name__)
 
 # Security Issue: Hardcoded secrets
 DATABASE_URL = "postgresql://admin:password123@localhost/prod"
 API_SECRET = "sk-live-1234567890abcdef"
+
 
 def get_db_connection():
     return sqlite3.connect('users.db')
